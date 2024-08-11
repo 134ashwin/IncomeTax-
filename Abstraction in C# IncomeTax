@@ -1,3 +1,7 @@
+//  I was Just Practicing Abstraction in c# 
+// Abstraction is a way in which we write some functionality in a private method but we will call it in public method of same class 
+and use it in another class 
+// But Another doesn't know the private method and it is  only using the functioanlity 
 
 using System;
 
