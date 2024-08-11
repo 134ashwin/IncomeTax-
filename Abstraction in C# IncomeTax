@@ -1,0 +1,90 @@
+
+using System;
+
+namespace Vsoft
+{
+
+class Employee
+{
+public int EmpId ;
+public string EmpName ;
+public double GrossPay ;
+public double TaxDecuction1 = 0.3 ;
+public double TaxDecuction2 = 0.25 ;
+public double TaxDecuction3 = 0.2 ;
+public double TaxDecuction4 = 0.15;
+public double TaxDecuction5 = 0;
+public double TaxPayed;
+public double netIncome ;
+
+
+public Employee(int Eid , string Ename , double Egrosspay)
+{
+    this.EmpId = Eid ;
+    this.EmpName = Ename ;
+    this.GrossPay =Egrosspay ;
+}
+
+void calculateSalary()
+{
+    if(GrossPay >= 125000 )
+    {
+        netIncome = GrossPay - (GrossPay * TaxDecuction1);
+        TaxPayed = GrossPay * TaxDecuction1;
+        Console.WriteLine( "Name  :" + EmpName);
+        Console.WriteLine( "Salary is : ₹" + netIncome);
+        Console.WriteLine( EmpName +" payed ₹" + TaxPayed  + " as incomeTax for indian Govt");
+    }
+    else if(GrossPay < 125000 && GrossPay >= 83333)
+    {
+        netIncome = GrossPay - (GrossPay * TaxDecuction2);
+        TaxPayed = GrossPay * TaxDecuction2;
+        Console.WriteLine( "Name  :" + EmpName);
+        Console.WriteLine("Salary is : ₹" + netIncome);
+         Console.WriteLine( EmpName +" payed ₹" + TaxPayed  + " as incomeTax for indian Govt");
+    }
+    else if(GrossPay < 83333 && GrossPay >= 41667 )
+    {
+        netIncome = GrossPay - (GrossPay * TaxDecuction3);
+        TaxPayed = GrossPay * TaxDecuction3;
+        Console.WriteLine( "Name  :" + EmpName);
+        Console.WriteLine("Salary is : ₹" + netIncome);
+         Console.WriteLine( EmpName +" payed ₹" + TaxPayed  + " as incomeTax for indian Govt");
+    } 
+    else if(GrossPay < 41667 && GrossPay >= 20833 )
+    {
+     netIncome = GrossPay - (GrossPay * TaxDecuction4);
+        TaxPayed = GrossPay * TaxDecuction4;
+        Console.WriteLine( "Name  :" + EmpName);
+        Console.WriteLine("Salary is : ₹" + netIncome);
+         Console.WriteLine( EmpName +" payed ₹" + TaxPayed  + " as incomeTax for indian Govt");
+    } 
+     else if(GrossPay < 20833 && GrossPay >= 0 )
+    {
+        netIncome = GrossPay - (GrossPay * TaxDecuction5);
+        TaxPayed = GrossPay * TaxDecuction5;
+        Console.WriteLine( "Name  :" + EmpName);
+        Console.WriteLine("Salary is : ₹" + netIncome);
+         Console.WriteLine( EmpName +" payed ₹" + TaxPayed  + " as incomeTax for indian Govt");
+    } 
+    
+    
+}
+
+public void ShowEmpDetails()
+{
+    this.calculateSalary();
+}
+
+} 
+
+class AccountManagement 
+{
+    static void Main(String[] args)
+    {
+       Employee obj = new Employee(1, "Ashwin Sharma" , 20831);
+       obj.ShowEmpDetails(); 
+    }
+}
+
+}
